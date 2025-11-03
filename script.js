@@ -226,7 +226,7 @@ const workouts = {
 function showAlert(msg, type = 'success') {
     const box = document.getElementById('alertBox');
     box.innerHTML = `<div class="alert alert-${type}">${msg}</div>`;
-    setTimeout(() => box.innerHTML = '', 4000);
+    setTimeout(() => box.innerHTML = '', 2000);
 }
 
 function toggleAuthMode() {
