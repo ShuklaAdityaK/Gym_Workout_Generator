@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Fitness nGo</title>
+    <link rel="stylesheet" href="feedback.css">
+    <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>💬 Feedback</h1>
+        <p>We’d love to hear your thoughts!</p>
+
+        <div id="feedbackAlert"></div>
+
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="fbName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" id="fbEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Feedback</label>
+                <textarea id="fbMessage" placeholder="Share your thoughts..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Feedback</button>
+        </form>
+
+        <a href="../index.html" class="btn back-btn">← Back to Home</a>
+    </div>
+
+    <script>
+        // Firebase config (use the same as your main site)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDUW5mcDLVSU7V2kdE3nJ1L-sy4AA4T5jM",
+            authDomain: "database-of-user.firebaseapp.com",
+            databaseURL: "https://database-of-user-default-rtdb.firebaseio.com",
+            projectId: "database-of-user",
+            storageBucket: "database-of-user.firebasestorage.app",
+            messagingSenderId: "550599351455",
+            appId: "1:550599351455:web:60cc81091c24dfd8b9d6aa",
+            measurementId: "G-QXL7N8MV6Z"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+    </script>
+    <script src="feedback.js"></script>
+</body>
+</html>

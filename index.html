@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness nGo</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="feedback/feedback.html" class="btn">Give Feedback 💬</a>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💪 Fitness nGo</h1>
+            <p id="subtitle">Your Personalized Workout Journey</p>
+            <button class="logout-btn hidden" id="logoutBtn">Logout</button>
+        </div>
+
+        <!-- Auth Page -->
+        <div id="authPage" class="content">
+            <div class="login-box">
+                <h2 id="authTitle">Welcome Back!</h2>
+                <div id="alertBox"></div>
+                <form id="authForm">
+                    <div class="form-group" id="nameGroup" style="display:none;">
+                        <label>Full Name</label>
+                        <input type="text" id="userName" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="userEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="userPass" placeholder="Min 6 characters" required>
+                    </div>
+                    <button type="submit" class="btn" id="authBtn">Login</button>
+                </form>
+                <div class="toggle-auth">
+                    <span>Don't have an account? <a id="toggleLink">Sign Up</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page -->
+        <div id="mainPage" class="content hidden">
+            <form id="workoutForm">
+                <div class="form-section">
+                    <h2>Personal Info</h2>
+                    <div class="form-group">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weight" required min="30" max="300" placeholder="70">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Fitness Goal</h2>
+                    <div class="form-group">
+                        <select id="goal" required>
+                            <option value="">Select goal...</option>
+                            <option value="loss">Weight Loss 🔥</option>
+                            <option value="gain">Muscle Gain 💪</option>
+                            <option value="tone">Toned Body ✨</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Experience</h2>
+                    <div class="form-group">
+                        <select id="level" required>
+                            <option value="">Select level...</option>
+                            <option value="beginner">Beginner (0-6 months)</option>
+                            <option value="intermediate">Intermediate (6-24 months)</option>
+                            <option value="advanced">Advanced (2+ years)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Available Equipment</h2>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="eq1" value="dumbbells">
+                            <label for="eq1">Dumbbells</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="eq2" value="barbell">
+                            <label for="eq2">Barbell</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="eq3" value="bodyweight">
+                            <label for="eq3">Bodyweight Only</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="eq4" value="bands">
+                            <label for="eq4">Resistance Bands</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Generate Workout Plan 🚀</button>
+            </form>
+
+            <div id="results" class="results">
+                <h2>Your Personalized Workout Plan</h2>
+                <div id="planContent"></div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
