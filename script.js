@@ -25,7 +25,7 @@ const DB = {
     async saveUser(email, name, pass) {
         try {
             const cleanEmail = email.replace(/\./g, "_");
-            await db.ref('fitness_users/' + cleanEmail).set({ name, pass });
+            await db.ref('fitness_users/' + cleanEmail).set({ name });
             return true;
         } catch (error) {
             console.error("Error saving user:", error);
